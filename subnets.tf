@@ -3,7 +3,7 @@ resource "aws_subnet" "public_subnet" {
   vpc_id                   = aws_vpc.roboshop_vpc.id
   cidr_block               = element(var.PUBLIC_SUBNET_CIDR, count.index)      # element will pick the value from list 
   map_public_ip_on_launch  = true
-  availability_zone        = length(var.AZ)
+  availability_zone        = element(var.AZ, count.index)
 
   tags = {
     Name = "roboshop-${var.ENV}-public-subnet-${count.index}"
