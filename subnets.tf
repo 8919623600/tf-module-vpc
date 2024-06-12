@@ -6,17 +6,18 @@ resource "aws_subnet" "public_subnet" {
   availability_zone        = element(var.AZ, count.index)
 
   tags = {
-    Name = "roboshop-${var.ENV}-public-subnet-${count.index}"
+    Name = "roboshop-${var.ENV}-public-subnet-${count.index+1}"
   }
 }
 
 
 resource "aws_subnet" "private_subnet" {
-  count            = length(var.PRIVATE_SUBNET_CIDR)
-  vpc_id           = aws_vpc.roboshop_vpc.id
-  cidr_block       = element(var.PRIVATE_SUBNET_CIDR, count.index)
+  count                    = length(var.PRIVATE_SUBNET_CIDR)
+  vpc_id                   = aws_vpc.roboshop_vpc.id
+  cidr_block               = element(var.PRIVATE_SUBNET_CIDR, count.index)
+  availability_zone        = element(var.AZ, count.index)
 
   tags = {
-    Name = "roboshop-${var.ENV}-private-subnet-${count.index}"
+    Name = "roboshop-${var.ENV}-private-subnet-${count.index+1}"
   }
 }
