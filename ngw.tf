@@ -3,13 +3,13 @@ resource "aws_eip" "ngw_ip" {
   domain =  "vpc"
 
   tags {
-    name =  "roboshot-${var.ENV-eip}"
+    Name = "roboshot-${var.ENV-eip}"
   }
 }
 
 resource "aws_nat_gateway" "ng" {
-  allocation_id = aws_eip.example.id
-  subnet_id     = aws_subnet.example.id
+  allocation_id = aws_eip.ngw_ip.id
+  subnet_id     = element(aws_subnet.public_subnet.*.id)
 
   tags = {
     Name = "${var.ENV-ng}"
