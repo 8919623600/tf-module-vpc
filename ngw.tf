@@ -9,7 +9,7 @@ resource "aws_eip" "ngw_ip" {
 
 resource "aws_nat_gateway" "ng" {
   allocation_id = aws_eip.ngw_ip.id
-  subnet_id     = element(aws_subnet.public_subnet.*.id)
+  subnet_id     = aws_subnet.public_subnet.*.[0]
 
   tags = {
     Name = "roboshop-${var.ENV}-ng"
