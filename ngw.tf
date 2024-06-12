@@ -3,7 +3,7 @@ resource "aws_eip" "ngw_ip" {
   domain =  "vpc"
 
   tags {
-    Name = "roboshot-${var.ENV-eip}"
+    Name = "roboshot-${var.ENV}-eip"
   }
 }
 
@@ -12,7 +12,7 @@ resource "aws_nat_gateway" "ng" {
   subnet_id     = element(aws_subnet.public_subnet.*.id)
 
   tags = {
-    Name = "${var.ENV-ng}"
+    Name = "${var.ENV}-ng"
   }
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
