@@ -16,6 +16,6 @@ resource "aws_nat_gateway" "ng" {
   }
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
-  # on the Internet Gateway for the VPC.
+  # on the Internet Gateway for the VPC and eip.
   depends_on = [aws_internet_gateway.igw , aws_eip.ngw_ip]
 }
