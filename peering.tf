@@ -4,5 +4,4 @@ resource "aws_vpc_peering_connection" "roboshop-default-peering" {
   vpc_id        = var.DEFAULT_VPC_ID
   auto_accept   = true
 
-  depends_on = [aws_vpc.roboshop_vpc.Name]
 }
