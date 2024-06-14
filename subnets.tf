@@ -8,6 +8,7 @@ resource "aws_subnet" "public_subnet" {
   tags = {
     Name = "roboshop-${var.ENV}-public-subnet-${count.index+1}"
   }
+ 
 }
 
 
@@ -21,3 +22,14 @@ resource "aws_subnet" "private_subnet" {
     Name = "roboshop-${var.ENV}-private-subnet-${count.index+1}"
   }
 }
+
+ output "public_subnet_id" {
+    value = aws_subnet.public_subnet.id
+  }
+
+   output "private_subnet_id" {
+    value = aws_subnet.private_subnet.id
+  }
+
+
+
