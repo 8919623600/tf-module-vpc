@@ -1,5 +1,5 @@
 output "PUBLIC_SUBNET_IDS" {
-    value = aws_subnet.public_subnet.*.id
+    value = aws_subnet.PUBLIC_SUBNET_IDS.*.id
 
   }
 
