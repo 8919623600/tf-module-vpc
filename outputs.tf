@@ -16,3 +16,7 @@ output "SG_ID" {
 value = aws_security_group.roboshop_sg.id
 }
 
+output "sg_status" {
+  value =  aws_security_group.roboshop_sg
+}
+
