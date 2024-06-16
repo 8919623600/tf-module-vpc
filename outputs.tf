@@ -8,5 +8,5 @@ output "PRIVATE_SUBNET_IDS" {
   }
 
 output "VPC_ID" {
-    value = aws_vpc.roboshop_vpc.id
+    value = aws_vpc.roboshop_vpc.*.id
 }
