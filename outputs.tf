@@ -17,18 +17,18 @@ value = aws_security_group.roboshop_sg.id
 }
 
 
-# output "VPC_CIDR" {
-#     value = aws_vpc.roboshop_vpc.cidr_block
-# }
+output "VPC_CIDR" {
+    value = aws_vpc.roboshop_vpc.cidr_block
+}
 
 
-# output "PRIVATE_SUBNET_CIDR" {
-#     value = aws_subnet.private_subnet.*.cidr_block
-# }
+output "PRIVATE_SUBNET_CIDR" {
+    value = aws_subnet.private_subnet.*.cidr_block
+}
 
-# output "PUBLIC_SUBNET_CIDR" {
-#     value = aws_subnet.public_subnet.*.cidr_block
-# }
+output "PUBLIC_SUBNET_CIDR" {
+    value = aws_subnet.public_subnet.*.cidr_block
+}
 
 
 
