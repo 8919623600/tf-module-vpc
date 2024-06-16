@@ -6,3 +6,7 @@ output "PUBLIC_SUBNET_IDS" {
 output "PRIVATE_SUBNET_IDS" {
     value = aws_subnet.private_subnet.*.id
   }
+
+output "VPC_ID" {
+    value = aws_vpc.roboshop_vpc.id
+}
